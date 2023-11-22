@@ -244,7 +244,9 @@ if @CategoryId is not null
 	WHERE  ArticleCode=@curentArticleCode  
 
 ----------- Use Procedure -----------
-	
+
+------ilk value book u tapmaq ucun cari book code dur sonraki deyerler null'dursa demeli deyismek istemir null deyilse hemin deyeri table'da update edirik
+------curentArticleCode u ona gore goturdumki id ni istifadechi gomur ama curentArticleCode u istifadechi gorurdu  bu saytda
 Exec dbo.UpdateBook @curentArticleCode ='djsdd243f',@BookTitle='Harry Potter',@BookDescription=null,@BookActualPrice=null,@BookDiscountPrice=null,@PublishingHouseid=null
 ,@StockCount=1,@ArticleCode=null,@bindingId=null ,@Pages=null,@CategoryId=null
 
@@ -254,8 +256,7 @@ Exec dbo.UpdateBook @curentArticleCode ='djsdd243f',@BookTitle='Harry Potter',@B
 
 -------------------------------------------------2 Create Trigger -------------------------------------------------
 
-
-
+------Her table ucun trigger yazdim ama eyni sey tekrar idi deye tes ucun bir defe isletdim Asagida
 Create Trigger DeleteBook
 On Books
 Instead Of Delete
